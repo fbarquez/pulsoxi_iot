@@ -22,8 +22,8 @@ The system measures **SpO₂ (blood oxygen saturation)** and **BPM (heart rate)*
 
 ---
 
-🔗 **Multilingual interactive web presentation:**  
-👉 [Visit the Project Website](https://yourusername.github.io/SpO2-Monitor-Project/)
+ **Multilingual interactive web presentation:**  
+ [Visit the Project Website](https://fbarquez.github.io/pulsoxi_iot/)
 
 ---
 
