@@ -113,7 +113,7 @@ See: `software/USART_Receptor_WIFI/USART_Receptor_WIFI.ino`
 
 ---
 
-## 🌐 Data Transmission and Visualization
+## Data Transmission and Visualization
 
 - Platform: [ThingSpeak](https://thingspeak.com)
 - Two data fields:
@@ -163,9 +163,9 @@ See: `software/USART_Receptor_WIFI/USART_Receptor_WIFI.ino`
 
 ---
 
-## 📽️ Demonstration Video
+## Demonstration Video
 
-📹 [Watch the live demo on Dropbox](https://www.dropbox.com/scl/fi/pl3xh61fnlcbmjqz21ddf/Abstandssensor_video_FB.mp4?rlkey=nnty2kcn74rb1pb28xz7tbtho&st=4qxa9l1h&dl=0)
+ [Watch the live demo on Dropbox](https://www.dropbox.com/scl/fi/jzmq0wq67i9w6cfi0vw9p/FernandoBarrigaVasquez_videodesProjekts.mp4?rlkey=ytrc685q6z3rqatgajav5w1xa&st=frvmd6lj&dl=0)
 
 ---
 
