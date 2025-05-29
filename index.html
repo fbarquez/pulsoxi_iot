@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpO2 Pulse Oximeter Project</title>
+    <style>
+        body {{ font-family: Arial, sans-serif; margin: 40px; }}
+        nav {{ margin-bottom: 20px; }}
+        .lang-content {{ display: none; }}
+        .active {{ display: block; }}
+        button {{ margin-right: 10px; padding: 5px 10px; cursor: pointer; }}
+        pre {{ background: #f4f4f4; padding: 10px; border: 1px solid #ccc; }}
+        table {{ border-collapse: collapse; width: 100%; margin-top: 20px; }}
+        th, td {{ border: 1px solid #ccc; padding: 8px; text-align: left; }}
+        h1, h2 {{ color: #003366; }}
+    </style>
+    <script>
+        function switchLang(lang) {{
+            const contents = document.querySelectorAll('.lang-content');
+            contents.forEach(el => el.classList.remove('active'));
+            document.getElementById(lang).classList.add('active');
+        }}
+    </script>
+</head>
+<body>
+    <nav>
+        <button onclick="switchLang('en')">English</button>
+        <button onclick="switchLang('de')">Deutsch</button>
+        <button onclick="switchLang('es')">Español</button>
+    </nav>
+
+    <div id="en" class="lang-content active">
+        <h1>SpO2 Pulse Oximeter Project</h1>
+        <p>This project implements a pulse oximeter using analog signal conditioning, microcontroller processing, and wireless data transmission to Thingspeak.</p>
+        <h2>Table of Contents</h2>
+        <ul>
+            <li>Architecture Overview</li>
+            <li>Logic and Software Flow</li>
+            <li>Results and Data Examples</li>
+            <li>Tools Used</li>
+            <li>Validation and Testing</li>
+            <li>References</li>
+        </ul>
+        <h2>Architecture Overview</h2>
+        <pre>
+Sensor → Analog Conditioning → PIC16F1937 → ESP32 → Thingspeak
+        </pre>
+        <h2>Tools Used</h2>
+        <table>
+            <tr><th>Tool</th><th>Purpose</th></tr>
+            <tr><td>MPLAB X IDE</td><td>Programming the PIC</td></tr>
+            <tr><td>MCC</td><td>Peripheral configuration</td></tr>
+            <tr><td>Eagle CAD</td><td>PCB Design</td></tr>
+            <tr><td>Thingspeak</td><td>IoT Data Visualization</td></tr>
+            <tr><td>ESP32 (Arduino)</td><td>Wireless communication</td></tr>
+        </table>
+        <h2>Preview Video</h2>
+        <p><a href="https://www.dropbox.com/scl/fi/pl3xh61fnlcbmjqz21ddf/Abstandssensor_video_FB.mp4?rlkey=nnty2kcn74rb1pb28xz7tbtho&st=4qxa9l1h&dl=0" target="_blank">Watch the project in action</a></p>
+    </div>
+
+    <div id="de" class="lang-content">
+        <h1>SpO2 Pulsoximeter Projekt</h1>
+        <p>Dieses Projekt realisiert ein Pulsoximeter mit analoger Signalverarbeitung, Mikrocontrollersteuerung und drahtloser Datenübertragung zu Thingspeak.</p>
+        <h2>Inhaltsverzeichnis</h2>
+        <ul>
+            <li>Systemarchitektur</li>
+            <li>Logik und Softwarefluss</li>
+            <li>Ergebnisse und Datenbeispiele</li>
+            <li>Verwendete Werkzeuge</li>
+            <li>Validierung und Tests</li>
+            <li>Referenzen</li>
+        </ul>
+        <h2>Systemarchitektur</h2>
+        <pre>
+Sensor → Signalverarbeitung → PIC16F1937 → ESP32 → Thingspeak
+        </pre>
+        <h2>Verwendete Werkzeuge</h2>
+        <table>
+            <tr><th>Werkzeug</th><th>Zweck</th></tr>
+            <tr><td>MPLAB X IDE</td><td>Programmierung des PIC</td></tr>
+            <tr><td>MCC</td><td>Peripheriekonfiguration</td></tr>
+            <tr><td>Eagle CAD</td><td>Leiterplattenentwurf</td></tr>
+            <tr><td>Thingspeak</td><td>IoT-Datenvisualisierung</td></tr>
+            <tr><td>ESP32 (Arduino)</td><td>Drahtlose Kommunikation</td></tr>
+        </table>
+        <h2>Vorschau Video</h2>
+        <p><a href="https://www.dropbox.com/scl/fi/pl3xh61fnlcbmjqz21ddf/Abstandssensor_video_FB.mp4?rlkey=nnty2kcn74rb1pb28xz7tbtho&st=4qxa9l1h&dl=0" target="_blank">Projekt ansehen</a></p>
+    </div>
+
+    <div id="es" class="lang-content">
+        <h1>Proyecto Oxímetro de Pulso SpO2</h1>
+        <p>Este proyecto implementa un oxímetro de pulso mediante acondicionamiento analógico, microcontrolador y transmisión de datos vía WiFi a Thingspeak.</p>
+        <h2>Índice</h2>
+        <ul>
+            <li>Arquitectura del sistema</li>
+            <li>Lógica y flujo de software</li>
+            <li>Resultados y ejemplos de datos</li>
+            <li>Herramientas utilizadas</li>
+            <li>Validación y pruebas</li>
+            <li>Referencias</li>
+        </ul>
+        <h2>Arquitectura del sistema</h2>
+        <pre>
+Sensor → Acondicionamiento → PIC16F1937 → ESP32 → Thingspeak
+        </pre>
+        <h2>Herramientas utilizadas</h2>
+        <table>
+            <tr><th>Herramienta</th><th>Uso</th></tr>
+            <tr><td>MPLAB X IDE</td><td>Programación del PIC</td></tr>
+            <tr><td>MCC</td><td>Configuración de periféricos</td></tr>
+            <tr><td>Eagle CAD</td><td>Diseño de PCB</td></tr>
+            <tr><td>Thingspeak</td><td>Visualización de datos IoT</td></tr>
+            <tr><td>ESP32 (Arduino)</td><td>Comunicación inalámbrica</td></tr>
+        </table>
+        <h2>Video de demostración</h2>
+        <p><a href="https://www.dropbox.com/scl/fi/pl3xh61fnlcbmjqz21ddf/Abstandssensor_video_FB.mp4?rlkey=nnty2kcn74rb1pb28xz7tbtho&st=4qxa9l1h&dl=0" target="_blank">Ver proyecto en acción</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+# Archivos de compilación
+**/build/
+**/dist/
+**/*.o
+**/*.i
+**/*.p1
+**/*.d
+**/*.elf
+**/*.hex
+**/*.cmf
+**/*.hxl
+**/*.lst
+**/*.map
+**/*.mum
+**/*.rlf
+**/*.sdb
+**/*.sym
+memoryfile.xml
+
+# Archivos de NetBeans/MPLAB X
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/*.mc3
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales de texto/imágenes
+*~
+*.bak
+*.tmp
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cost-Efficient IoT-Based Pulse Oximeter for Remote Health Monitoring</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1 data-lang="en">Cost-Efficient IoT-Based Pulse Oximeter for Remote Health Monitoring</h1>
+        <h1 data-lang="es" class="hidden">Pulsioxímetro Económico Basado en IoT para Monitorización Remota de la Salud</h1>
+        <h1 data-lang="de" class="hidden">Entwicklung eines kosteneffizienten
+Pulsoximeters
+mittels IoT-Technologien für die Fernüberwachung</h1>
+        <div class="language-selector">
+            <button onclick="switchLanguage('en')">English</button>
+            <button onclick="switchLanguage('es')">Español</button>
+            <button onclick="switchLanguage('de')">Deutsch</button>
+        </div>
+    </header>
+    <nav>
+        <button onclick="showSection('intro')">Intro</button>
+        <button onclick="showSection('overview')">Overview</button>
+        <button onclick="showSection('hardware')">Hardware</button>
+        <button onclick="showSection('firmware')">Firmware</button>
+        <button onclick="showSection('software')">Software</button>
+        <button onclick="showSection('video')">Demo Video</button>
+    </nav>
+    <main>
+        <section id="intro" class="section">
+            <p data-lang="en">Welcome! This is a technical academic project for SpO₂ and heart rate monitoring...</p>
+            <p data-lang="es" class="hidden">¡Bienvenido! Este es un proyecto académico técnico para monitoreo de SpO₂ y frecuencia cardíaca...</p>
+            <p data-lang="de" class="hidden">Willkommen! Dies ist ein technisches akademisches Projekt zur Überwachung von SpO₂ und Herzfrequenz...</p>
+        </section>
+        <section id="overview" class="section hidden">
+            <h2>Overview</h2>
+            <p data-lang="en">This section covers the project's goal, academic context, and general description...</p>
+            <img src="assets/images/diagram_system_overview.png" alt="Pulse Oximeter System" style="width: 60%;">
+        </section>
+        <section id="hardware" class="section hidden">
+            <h2>Hardware</h2>
+            <p data-lang="en">Hardware details include IR sensors, signal conditioning, and PCB design...</p>
+        </section>
+        <section id="firmware" class="section hidden">
+            <h2>Firmware</h2>
+            <p data-lang="en">This section explains how the firmware configures ADC and acquires data...</p>
+        </section>
+        <section id="software" class="section hidden">
+            <h2>Software</h2>
+            <p data-lang="en">The software logic for ESP32 transmission using USART and WiFi is described...</p>
+        </section>
+        <section id="video" class="section hidden">
+            <h2>Demo Video</h2>
+            <a href="https://www.dropbox.com/scl/fi/pl3xh61fnlcbmjqz21ddf/Abstandssensor_video_FB.mp4?rlkey=nnty2kcn74rb1pb28xz7tbtho&st=4qxa9l1h&dl=0" target="_blank">Watch Demo</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 fbarquez | HTW Berlin</p>
+    </footer>
+    <script src="language-switcher.js"></script>
+</body>
+</html>
