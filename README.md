@@ -23,7 +23,7 @@ It measures **SpO₂ (blood oxygen saturation)** and **BPM (heart rate)** using 
 ---
 
 **View Full Thesis (Web Viewer)**: 
-[Read the full thesis as images](https://fbarquez.github.io/pulsoxi_iot/docs/thesis/index.html)
+[Read the full thesis as images](https://fbarquez.github.io/pulsoxi_iot/thesis/index.html)
 
 **Live Demonstration Video**: 
 [▶ Watch on Dropbox](https://www.dropbox.com/scl/fi/jzmq0wq67i9w6cfi0vw9p/FernandoBarrigaVasquez_videodesProjekts.mp4?rlkey=ytrc685q6z3rqatgajav5w1xa&st=frvmd6lj&dl=0)
