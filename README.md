@@ -1,4 +1,4 @@
-# IoT-Based Pulse Oximeter with PIC16F1937 and ESP32
+# IoT-Based Pulse Oximeter with PIC16F1936/37 and ESP32
 
 ![Status](https://img.shields.io/badge/status-completed-brightgreen)
 ![License](https://img.shields.io/badge/license-Unlicensed-red)
