@@ -80,7 +80,7 @@ The system is divided into three functional modules:
 
 ---
 
-## 🛠️ Hardware Design
+## Hardware Design
 
 The hardware was developed using **Autodesk EAGLE** and includes:
 
