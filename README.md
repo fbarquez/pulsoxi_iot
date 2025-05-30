@@ -1,5 +1,4 @@
-
-# Development of a Microcontroller-Based Pulse Oximeter with Wireless Data Transmission
+# IoT-Based Pulse Oximeter with PIC16F1937 and ESP32
 
 ![Status](https://img.shields.io/badge/status-completed-brightgreen)
 ![License](https://img.shields.io/badge/license-Unlicensed-red)
@@ -9,85 +8,88 @@
 ![Firmware](https://img.shields.io/badge/Firmware-MPLAB%20X-lightblue)
 ![UI](https://img.shields.io/badge/UI-GitHub%20Pages-lightgrey)
 ![Project Type](https://img.shields.io/badge/Type-Bachelor%20Thesis-yellow)
-![Device](https://img.shields.io/badge/Device-PIC16F1936-blueviolet)
-
+![Device](https://img.shields.io/badge/Device-PIC16F1937-blueviolet)
 
 ---
 
 ## Project Overview
 
-This repository documents the development of a **microcontroller-based pulse oximeter** that leverages wireless data transmission via Wi-Fi for remote health monitoring. It was developed as part of a Bachelor’s thesis in **Information and Communication Technology Engineering** at HTW Berlin.
+This repository presents the development of a **microcontroller-based pulse oximeter** with wireless data transmission via Wi-Fi, intended for remote health monitoring. The system was designed as part of a Bachelor's thesis in **Information and Communication Technology Engineering** at HTW Berlin.
 
-The system measures **SpO₂ (blood oxygen saturation)** and **BPM (heart rate)** using optical sensors, processes the signals through analog conditioning and a **PIC16F1936 microcontroller**, displays them on an LCD, and sends the data to the **ThingSpeak IoT platform** using an ESP32-C6 module.
+It measures **SpO₂ (blood oxygen saturation)** and **BPM (heart rate)** using optical sensing and analog signal conditioning. A **PIC16F1937** microcontroller digitizes the signals and transmits them via UART to an **ESP32-C6**, which uploads the data to **ThingSpeak** for real-time cloud visualization.
 
----
-
- **Multilingual interactive web presentation:**  
- [Visit the Project Website](https://fbarquez.github.io/pulsoxi_iot/)
+![Project Overview](images/diagram_system_overview.png)
 
 ---
 
-## 📑 Table of Contents
+**View Full Thesis (Web Viewer)**: 
+[Read the full thesis as images](https://fbarquez.github.io/pulsoxi_iot/thesis/index_thesis.html)
 
-- [System Description](#system-description)
-- [Architecture Overview](#architecture-overview)
-- [Hardware Design](#hardware-design)
-- [Firmware and Software](#firmware-and-software)
-- [Data Transmission and Visualization](#data-transmission-and-visualization)
-- [Folder Structure](#folder-structure)
-- [Usage Instructions](#usage-instructions)
-- [License & Notices](#license--notices)
+**Live Demonstration Video**: 
+[▶ Watch on Dropbox](https://www.dropbox.com/scl/fi/jzmq0wq67i9w6cfi0vw9p/FernandoBarrigaVasquez_videodesProjekts.mp4?rlkey=ytrc685q6z3rqatgajav5w1xa&st=frvmd6lj&dl=0)
 
 ---
 
-## System Description
+## Features
 
-The system is built to detect heart rate and SpO₂ levels using a **transmitter-receiver optical sensor arrangement**. The analog signal undergoes conditioning (filtering and amplification), is digitized using a PIC16F1937 microcontroller, and then transmitted via UART to an ESP32 module, which finally uploads the data to the **ThingSpeak IoT platform** over WiFi.
-
-This implementation follows a modular approach separating:
-
-- **Sensor input and analog conditioning**
-- **Signal digitization and data processing**
-- **Wireless transmission and data visualization**
-
----
-
-## Architecture Overview
-
-The complete system is split into three main modules:
-
-1. **Analog Front-End (AFE)**:
-   - Sensor: IR LED and BPW34 photodiode
-   - Signal conditioning: low-pass & high-pass filters, current-to-voltage converter, non-inverting amplifier
-
-2. **Microcontroller Unit (MCU)**:
-   - PIC16F1937 with ADC to digitize signals
-   - UART communication with ESP32
-
-3. **Connectivity & Visualization**:
-   - ESP32 C6 receives UART data
-   - Sends it to ThingSpeak cloud server
-   - Real-time data charts shown on the dashboard
-
-Diagrams of this architecture can be found in the `images/` folder and on the web version.
+- Real-time SpO₂ and BPM measurement
+- Modular signal processing: sensor input, analog conditioning, digitization
+- Wireless data transmission via ESP32 and Wi-Fi
+- ThingSpeak dashboard with live charts
+- Local LCD display for instant readings
+- Custom-designed PCBs using EAGLE
 
 ---
 
-## Hardware Design
+## Folder Structure
 
-Schematic design and PCB layouts were made using **EAGLE**. The hardware is modular and comprises:
+```
+├── docs/                  # Thesis report and web materials
+├── firmware/              # Embedded code for PIC and ESP32
+│   ├── pic/
+│   └── esp32/
+├── hardware/              # Schematics and PCB files
+├── images/                # Photos and diagrams
+├── LICENSE
+├── NOTICE.md
+├── README.md
+└── requirements.md
+```
 
-- Pulse sensor circuits for both RED and IR light
-- Custom-designed PCBs for:
+---
+
+## System Architecture
+
+The system is divided into three functional modules:
+...
+
+![System Architecture Overview](images/architecture/system_overview.png)
+
+
+### 1. Analog Front-End (AFE)
+- **Components**: IR + Red LEDs, BPW34 photodiode
+- **Signal Conditioning**: Low-pass/high-pass filters, current-to-voltage converter, amplifier
+
+### 2. Microcontroller Unit (MCU)
+- **Microcontroller**: PIC16F1937 with ADC and UART
+- **Tasks**: Signal digitization, data formatting, LCD display update
+
+### 3. Connectivity & Visualization
+- **ESP32-C6**: UART receiver, Wi-Fi client
+- **Cloud**: ThingSpeak channel for live plotting
+
+---
+
+## 🛠️ Hardware Design
+
+The hardware was developed using **Autodesk EAGLE** and includes:
+
+- Modular PCBs for:
   - Signal conditioning
+  - Optical sensor input
   - Power regulation
-  - Sensor connection
-- 16x2 LCD display for real-time visualization
-
-The `hardware/` folder contains:
-- `.sch` and `.brd` files for Eagle
-- PDF exports for quick access
-- Rendered PCB previews (top, bottom, drill)
+- Schematic and board files (`.sch` / `.brd`) available in `hardware/eagle/`
+- Rendered images and PDFs in `hardware/pdf/`
 
 ---
 
@@ -95,88 +97,77 @@ The `hardware/` folder contains:
 
 ### PIC16F1937 Firmware
 
-- Written in C using MPLAB X IDE and MCC (Microchip Code Configurator)
+- Developed in C using **MPLAB X IDE** with **MCC**
 - Core features:
-  - ADC configuration for analog signals
-  - UART communication setup
-  - Data formatting and LCD update
+  - ADC configuration
+  - UART transmission to ESP32
+  - LCD driver integration
 
-See: `firmware/SpO2_Oximetro_Calculo/`
+ Path: `firmware/pic/oxi_spo2_firmware/`
 
 ### ESP32 UART Receiver
 
-- Programmed using Arduino Framework
-- Parses UART data from PIC
-- Establishes WiFi connection and sends data to ThingSpeak
+- Written in **Arduino framework**
+- Connects via UART to PIC
+- Transmits data to ThingSpeak over Wi-Fi
 
-See: `software/USART_Receptor_WIFI/USART_Receptor_WIFI.ino`
-
----
-
-## Data Transmission and Visualization
-
-- Platform: [ThingSpeak](https://thingspeak.com)
-- Two data fields:
-  - SpO₂ (%)
-  - Heart Rate (bpm)
-- Real-time data graphs
-- Dashboard view available for sharing and monitoring
+ Path: `firmware/esp32/usart_relay_thingspeak.ino`
 
 ---
 
-## Folder Structure
+## Data Transmission & Visualization
 
-```
-.
-├── docs/
-├── firmware/
-├── hardware/
-├── images/
-├── software/
-├── assets/
-├── README.md
-├── NOTICE.md
-├── LICENSE
-└── requirements.md
-```
+- **ThingSpeak** IoT platform:
+  - Channel with 2 fields: SpO₂ (%) and BPM
+  - Real-time data plotted in the dashboard
+
+- **LCD Output**:
+  - Displays BPM and oxygen level locally
+
+---
+
+## Requirements
+
+- [MPLAB X IDE](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
+- [MCC (Code Configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- ESP32 board support package
+- [ThingSpeak account](https://thingspeak.com)
 
 ---
 
 ## Usage Instructions
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/SpO2-Monitor-Project.git
-   cd SpO2-Monitor-Project
-   ```
+### 1. Clone the repository
 
-2. Open the firmware in MPLAB X:
-   - Build and flash to PIC16F1937
+```bash
+git clone https://github.com/yourusername/SpO2-Monitor-Project.git
+cd SpO2-Monitor-Project
+```
 
-3. Load the ESP32 `.ino` code in Arduino IDE and upload
+### 2. PIC Firmware
 
-4. Open your [ThingSpeak channel](https://thingspeak.com) and configure it to receive data
+- Open `firmware/pic/oxi_spo2_firmware/` in MPLAB X
+- Compile and flash to the PIC16F1937
 
-5. Check real-time values either via:
-   - 16x2 LCD
-   - ThingSpeak dashboard
+### 3. ESP32 Code
+
+- Open `firmware/esp32/usart_relay_thingspeak.ino` in Arduino IDE
+- Configure your Wi-Fi credentials and ThingSpeak API key
+- Upload to your ESP32 board
+
+### 4. Dashboard
+
+- Access your ThingSpeak channel to monitor live data
+- Optionally view readings on the 16x2 LCD display
 
 ---
 
-## Demonstration Video
+## License & Legal
 
- [Watch the live demo on Dropbox](https://www.dropbox.com/scl/fi/jzmq0wq67i9w6cfi0vw9p/FernandoBarrigaVasquez_videodesProjekts.mp4?rlkey=ytrc685q6z3rqatgajav5w1xa&st=frvmd6lj&dl=0)
+This repository is provided **for educational and demonstration purposes only**.
 
----
+> Not licensed for reuse, redistribution, or commercial use.
 
-## License & Notices
-
-This project is **not licensed** for reuse, redistribution, or modification.
-
-> **Copyright © 2024 Fbarquez**
-
-Permission is **not granted** to use, copy, modify, merge, publish, distribute, sublicense, or sell copies of this software.
-
-This repository is provided strictly for **educational and demonstrational purposes** only.
-
-See [LICENSE](LICENSE) for full legal information.
+All content © 2024 fbarquez. 
+See [`LICENSE`](LICENSE) for more details.

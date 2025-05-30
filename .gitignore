@@ -1,33 +1,57 @@
-# Archivos de compilación
-**/build/
-**/dist/
-**/*.o
-**/*.i
-**/*.p1
-**/*.d
-**/*.elf
-**/*.hex
-**/*.cmf
-**/*.hxl
-**/*.lst
-**/*.map
-**/*.mum
-**/*.rlf
-**/*.sdb
-**/*.sym
-memoryfile.xml
-
-# Archivos de NetBeans/MPLAB X
-**/nbproject/private/
-**/nbproject/Makefile-*.mk
-**/*.mc3
-
-# Archivos del sistema
+# === General ===
 .DS_Store
 Thumbs.db
-
-# Archivos temporales de texto/imágenes
-*~
-*.bak
+*.log
 *.tmp
+
+# === MPLAB X ===
+**/build/
+**/dist/
+**/nbproject/private/
+*.X.production.*
+*.X.*
+*.elf
+*.hex
+*.o
+*.d
+*.lst
+*.map
+*.sym
+*.cmf
+*.p1
+*.sdb
+*.hxl
+*.mum
+
+# === Arduino ===
+*.ino.*
+*.cpp.d
+*.d
+*.eep
+*.elf
+*.bin
+
+# === Eagle CAD ===
+*.s#*
+*.b#*
+*.l#*
+*.prol
+*.epf
+*.sch~
+*.brd~
+*.bak
+
+# === VS Code or editor config ===
+.vscode/
+.idea/
+*.swp
+
+# === Node/web/other ===
+node_modules/
+dist/
+build/
+*.zip
+
+# === Images or generated content ===
+*.jfif
 
